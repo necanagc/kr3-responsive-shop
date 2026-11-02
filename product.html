@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Информация о товаре магазина МузТорг Жуковский.">
+  <title>Товар — МузТорг Жуковский</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <img class="header--img__logo" src="images/image.png" alt="">
+      <a class="site-header__logo" href="index.html">МузТорг Жуковский</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <details class="site-nav__menu">
+          <summary class="site-nav__toggle">Меню</summary>
+          <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="orders.html">Заявки</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          </ul>
+        </details>
+        <ul class="site-nav__desktop-list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="orders.html">Заявки</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span aria-hidden="true"> / </span>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current" id="product-breadcrumb" aria-current="page">Микшер Behringer</span>
+    </nav>
+
+    <section class="section product-detail" id="product-detail">
+      <div class="product-detail__media">
+        <img
+          class="product-detail__image"
+          id="product-image"
+          src="images/2rd7xauplracw0wc48kwkgg4s-2.jpg"
+          alt="Микшер Behringer Xenyx QX602MP3"
+          width="640"
+          height="640"
+        >
+      </div>
+      <div class="product-detail__content">
+        <h1 id="product-title">Микшер Behringer</h1>
+        <p id="product-description">Организация сигналов для концертов и репетиций.</p>
+        <p class="product-detail__price">
+          Цена: <strong id="product-price">10 000 руб.</strong>
+        </p>
+        <a class="button button--primary" id="product-order-link" href="orders.html?product=behringer">
+          Оставить заявку
+        </a>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="product-table">
+          <caption>Информация о товаре</caption>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Значение</th>
+            </tr>
+          </thead>
+          <tbody id="product-specifications">
+            <tr><th scope="row">Модель</th><td>Behringer Xenyx QX602MP3</td></tr>
+            <tr><th scope="row">Категория</th><td>Микшер</td></tr>
+            <tr><th scope="row">Цена</th><td>10 000 руб.</td></tr>
+            <tr><th scope="row">Описание</th><td>Организация сигналов для концертов и репетиций.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="product-not-found" id="product-not-found" role="alert" hidden>
+      Такой товар не найден. Выберите товар в <a href="catalog.html">каталоге</a>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 МузТорг Жуковский. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+  <a class="scroll-top" href="#top" aria-label="Наверх" title="Наверх">↑</a>
+</body>
+</html>
