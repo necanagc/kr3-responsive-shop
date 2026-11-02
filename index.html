@@ -16,16 +16,19 @@
 
 </head>
 
-<body>
-    <header class="site-header" id="top">
+<body id="top">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    <header class="site-header">
       <div class="site-header__inner">
-        <img class="header--img__logo" src="images/image.png">
+        <img class="header--img__logo" src="images/image.png" alt="">
         <a class="site-header__logo" href="index.html">МузТорг Жуковский</a>
 
         <nav class="site-nav" aria-label="Основная навигация">
-          <ul class="site-nav__list">
+          <details class="site-nav__menu">
+            <summary class="site-nav__toggle">Меню</summary>
+            <ul class="site-nav__list">
             <li class="site-nav__item">
-              <a class="site-nav__link site-nav__link--active" href="index.html">
+              <a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">
                 Главная
               </a>
             </li>
@@ -43,20 +46,29 @@
                 Популярные товары
               </a>
             </li>
+            </ul>
+          </details>
+          <ul class="site-nav__desktop-list">
+            <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="orders.html">Заявки</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
 
-    <main>
+    <main id="main" class="main">
         <section class="hero">
+            <h1 class="visually-hidden">Музыкальный магазин «МузТорг» в Жуковском</h1>
             <picture>
               <source media="(min-width: 1200px)" srcset="images/image_hero_1200_800.png">
               <source media="(min-width: 768px)" srcset="images/image_hero_960_640.png">
               <img
                 src="images/image_hero_640_427.png"
-                alt="Музыкальный магазин «МузТорг» в Жуковском"
+                alt="Мозаичный портрет музыканта на стене"
                 width="640"
                 height="427"
                 class="hero__image"
@@ -100,42 +112,51 @@
               <h3 class="product-card__title">Микшер Behringer</h3>
               <p class="product-card__description">Организация сигналов, для концертов и репетиций</p>
               <p class="product-card__price">Цена: 10 000 руб.</p>
-              <button
-                class="button product-card__button"
-                type="button"
-                data-product="Микшер Behringer"
-              >
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button product-card__details" href="product.html?product=behringer">Подробнее о микшере</a>
+                <button
+                  class="button product-card__button"
+                  type="button"
+                  data-product="Микшер Behringer"
+                >
+                  Заказать
+                </button>
+              </div>
             </article>
 
 
             <article class="product-card product-card--featured">
-              <img class="product-card__image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiuOlkQvFRg10ZYWpsodNN0Nqq104lc87C_4ubjngDNvwfJYEVbi7QLcMj&s=10" alt="Музыкальный инструмент из каталога" loading="lazy" decoding="async">
+              <img class="product-card__image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiuOlkQvFRg10ZYWpsodNN0Nqq104lc87C_4ubjngDNvwfJYEVbi7QLcMj&s=10" alt="Микрофон Shure" loading="lazy" decoding="async">
               <h3 class="product-card__title">Микрофон Shure</h3>
               <p class="product-card__description">Легендарный динамический микрофон, для записи и выступлений</p>
               <p class="product-card__price">Цена: 12 000 руб.</p>
-              <button
-                class="button product-card__button"
-                type="button"
-                data-product="Микрофон Shure"
-              >
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button product-card__details" href="product.html?product=shure">Подробнее о микрофоне</a>
+                <button
+                  class="button product-card__button"
+                  type="button"
+                  data-product="Микрофон Shure"
+                >
+                  Заказать
+                </button>
+              </div>
             </article>
 
             <article class="product-card product-card--featured">
-              <img class="product-card__image" src="https://bxuiiaeu1l.a.trbcdn.net/cjc/tnt/tdg/bw4/8ss/w08/ow8/sg8/cjctnttdgbw48ssw08ow8sg80.jpg" alt="Музыкальный инструмент из каталога" loading="lazy" decoding="async">
+              <img class="product-card__image" src="https://bxuiiaeu1l.a.trbcdn.net/cjc/tnt/tdg/bw4/8ss/w08/ow8/sg8/cjctnttdgbw48ssw08ow8sg80.jpg" alt="DJ-контроллер" loading="lazy" decoding="async">
               <h3 class="product-card__title">DJ-контроллер</h3>
               <p class="product-card__description">Для вечеринок и ваших DJ-сетов</p>
               <p class="product-card__price">Цена: 50 000 руб.</p>
-              <button
-                class="button product-card__button"
-                type="button"
-                data-product="DJ-контроллер"
-              >
-                Заказать
-              </button>
+              <div class="product-card__actions">
+                <a class="button product-card__details" href="product.html?product=dj-controller">Подробнее о DJ-контроллере</a>
+                <button
+                  class="button product-card__button"
+                  type="button"
+                  data-product="DJ-контроллер"
+                >
+                  Заказать
+                </button>
+              </div>
             </article>
           </div>
         </section>
@@ -252,7 +273,7 @@
 
 </dialog>
 
-<p class="success-message" id="success-message" hidden>
+<p class="success-message" id="success-message" role="status" aria-live="polite" hidden>
   Форма успешно отправлена!
 </p>
 

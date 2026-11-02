@@ -1,3 +1,84 @@
+const catalogProducts = {
+  behringer: {
+    name: 'Микшер Behringer',
+    category: 'Микшер',
+    price: '10 000 руб.',
+    description: 'Организация сигналов для концертов и репетиций.',
+    image: 'images/2rd7xauplracw0wc48kwkgg4s-2.jpg',
+    imageAlt: 'Микшер Behringer',
+  },
+  shure: {
+    name: 'Микрофон Shure',
+    category: 'Микрофон',
+    price: '12 000 руб.',
+    description: 'Легендарный динамический микрофон для записи и выступлений.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiuOlkQvFRg10ZYWpsodNN0Nqq104lc87C_4ubjngDNvwfJYEVbi7QLcMj&s=10',
+    imageAlt: 'Микрофон Shure',
+  },
+  'dj-controller': {
+    name: 'DJ-контроллер',
+    category: 'DJ-контроллер',
+    price: '50 000 руб.',
+    description: 'Оборудование для вечеринок и DJ-сетов.',
+    image: 'https://bxuiiaeu1l.a.trbcdn.net/cjc/tnt/tdg/bw4/8ss/w08/ow8/sg8/cjctnttdgbw48ssw08ow8sg80.jpg',
+    imageAlt: 'DJ-контроллер',
+  },
+};
+
+const productDetail = document.getElementById('product-detail');
+
+if (productDetail) {
+  const productId = new URLSearchParams(window.location.search).get('product') || 'behringer';
+  const product = catalogProducts[productId];
+
+  if (!product) {
+    productDetail.hidden = true;
+    document.getElementById('product-breadcrumb').textContent = 'Товар';
+    document.getElementById('product-not-found').hidden = false;
+  } else {
+    document.getElementById('product-title').textContent = product.name;
+    document.getElementById('product-description').textContent = product.description;
+    document.getElementById('product-price').textContent = product.price;
+    document.getElementById('product-breadcrumb').textContent = product.name;
+    document.getElementById('product-image').src = product.image;
+    document.getElementById('product-image').alt = product.imageAlt;
+    document.getElementById('product-order-link').href =
+      `orders.html?product=${encodeURIComponent(productId)}`;
+    document.title = `${product.name} — МузТорг Жуковский`;
+
+    const specifications = document.getElementById('product-specifications');
+    const rows = [
+      ['Товар', product.name],
+      ['Категория', product.category],
+      ['Цена', product.price],
+      ['Описание', product.description],
+    ].map(([label, value]) => {
+      const row = document.createElement('tr');
+      const heading = document.createElement('th');
+      const cell = document.createElement('td');
+
+      heading.scope = 'row';
+      heading.textContent = label;
+      cell.textContent = value;
+      row.append(heading, cell);
+      return row;
+    });
+
+    specifications.replaceChildren(...rows);
+  }
+}
+
+const orderProductSelect = document.getElementById('order-product');
+const requestedProductId = new URLSearchParams(window.location.search).get('product');
+
+if (
+  orderProductSelect &&
+  requestedProductId &&
+  Object.hasOwn(catalogProducts, requestedProductId)
+) {
+  orderProductSelect.value = requestedProductId;
+}
+
 // Получаем модальное окно по id.
 const orderDialog = document.querySelector('.order-dialog');
 
